@@ -31,6 +31,8 @@ sudo /vagrant/bin/configure-cluster
 exit
 ```
 
+`kubectl apply -n rook-ceph -f https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/ceph/csi/cephfs/storageclass.yaml`
+
 
 ## Install calico 
 
@@ -97,11 +99,24 @@ kubectl port-forward  -n prometheus  svc/prometheus-grafana 9999:80
 - username: admin, pw: prom-operator
 - Access grafana at localhost:9999
 
+# ceph dashboard
+
+user: admin
+password is in secret rook-ceph/rook-ceph-dashboard-password)
+
+
 ## To Uninstall
 
 helm uninstall prometheus
 
-## Ref
+# others
+ceph toolbox
+
+Allow running rootless containers
+https://github.com/rootless-containers/usernetes
+
+
+# Ref
 
 - https://www.youtube.com/watch?v=QoDqxm7ybLc
 - https://gitlab.com/nanuchi/youtube-tutorial-series/-/blob/master/prometheus-exporter/install-prometheus-commands.md

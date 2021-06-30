@@ -11,7 +11,7 @@ metadata:
   uid: 84447191-df66-42d9-925e-5fcf4b3f3972
 spec:
   rules:
-  - host: grafana.192.168.33.20.nip.io
+  - host: grafana.192.168.10.200.nip.io
     http:
       paths:
       - backend:
