@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app.kubernetes.io/instance: Grafana-dashboard
+    app.kubernetes.io/name: Grafana-dashboard
+  name: grafana-dashboard
+  namespace: prometheus
+  resourceVersion: "749"
+  selfLink: /apis/networking.k8s.io/v1/namespaces/kube-system/ingresses/kubernetes-dashboard
+  uid: 84447191-df66-42d9-925e-5fcf4b3f3972
+spec:
+  rules:
+  - host: grafana.192.168.33.20.nip.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: prometheus-grafana 
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+status:
+  loadBalancer: {}
