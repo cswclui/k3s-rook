@@ -22,6 +22,7 @@ class Cfg
         vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', @cephdisk]
       end
       v.vm.network "private_network", ip: @ip
+      v.disksize.size = '50GB'
       v.vm.provision "shell", path: "bin/provision-k3s", args: [@ip, @primary.to_s]
     end
   end
@@ -33,7 +34,8 @@ Vagrant.configure("2") do |config|
   config.vm.box = "debian/contrib-buster64"
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048"
+    vb.memory = "6144"
+    vb.cpus = 4
   end
 
   for i in 1..3
