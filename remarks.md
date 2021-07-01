@@ -116,6 +116,11 @@ Allow running rootless containers
 https://github.com/rootless-containers/usernetes
 
 
+Delete unused containers in k3s
+
+sudo k3s crictl rmi --prune
+
+
 # Ref
 
 - https://www.youtube.com/watch?v=QoDqxm7ybLc
