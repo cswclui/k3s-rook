@@ -129,6 +129,11 @@ vagrant ssh master-1 --  echo "Asia/Hong_Kong" > /etc/timezone
 vagrant ssh worker-1 --  echo "Asia/Hong_Kong" > /etc/timezone
 
 
+# configure rootless container
+https://docs.docker.com/engine/security/rootless/
+
+add kernel.unprivileged_userns_clone=1 to /etc/sysctl.conf (or /etc/sysctl.d) and run sudo sysctl --system.
+
 # Ref
 
 - https://www.youtube.com/watch?v=QoDqxm7ybLc
