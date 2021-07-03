@@ -113,6 +113,7 @@ helm uninstall prometheus
 ceph toolbox
 
 Allow running rootless containers
+
 https://github.com/rootless-containers/usernetes
 
 
@@ -121,6 +122,11 @@ https://github.com/rootless-containers/usernetes
 sudo k3s crictl rmi --prune
 
 
+## change time zone
+
+vagrant ssh master-1 --  echo "Asia/Hong_Kong" > /etc/timezone
+
+vagrant ssh worker-1 --  echo "Asia/Hong_Kong" > /etc/timezone
 
 
 # Ref
