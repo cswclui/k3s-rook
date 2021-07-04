@@ -134,6 +134,13 @@ https://docs.docker.com/engine/security/rootless/
 
 add kernel.unprivileged_userns_clone=1 to /etc/sysctl.conf (or /etc/sysctl.d) and run sudo sysctl --system.
 
+#k3s files
+
+- /etc/rancher/k3s/k3s.yaml
+- /etc/rancher/k3s/config.yaml
+- /var/lib/rancher/k3s/server/node-token
+
+
 # Ref
 
 - https://www.youtube.com/watch?v=QoDqxm7ybLc
